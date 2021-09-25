@@ -1,6 +1,10 @@
 import React from "react";
 
 const Todo = ({text}) => { 
+    //Criando os eventos para exclusão e confirmar tarefa realizadas
+    const deleteHandler =() => {
+        
+    }
     return (
             <div className="todo">
                 <li className="todo-item">{text}</li>
