@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 //Importando os componentes
 import Form from "./components/Form";
@@ -6,11 +6,18 @@ import TodoList from "./components/TodoList";
 
 
 function App() {
+
   //State
   const [inputText, setInputText] = useState ("");
   const [todos, setTodos] = useState ([]);
   const [status, setStatus] = useState ("all");
   const [filteredTodos, setFilteredTodos] = useState ([]);
+
+    //useEffect
+    useEffect(() => {
+      filterHandler();
+    }, [todos, status]);
+
   //Funções
   const filterHandler = () => {
     switch (status) {
