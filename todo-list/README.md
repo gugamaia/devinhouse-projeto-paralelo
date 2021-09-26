@@ -4,6 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # devinhouse-projeto-paralelo
 
+
 ## Available Scripts
 
 In the project directory, you can run:
