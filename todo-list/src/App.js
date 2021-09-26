@@ -70,6 +70,7 @@ function App() {
     todos={todos}
     />
     </div>
+   
   );
 }
 

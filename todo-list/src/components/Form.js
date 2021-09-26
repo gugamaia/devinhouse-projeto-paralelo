@@ -8,7 +8,7 @@ const Form = ( { setInputText, todos, setTodos, inputText, setStatus } ) => {
     e.preventDefault();
     setTodos([
       ...todos, 
-      { text: inputText, completed: false, id: Math.random() * 1000 },
+      { text: inputText, completed: false, id: Math.random() * 100 },
     ]);
     setInputText("");
   };
@@ -31,9 +31,9 @@ const Form = ( { setInputText, todos, setTodos, inputText, setStatus } ) => {
       </button>
       <div className="select">
         <select onChange={statusHandler} name="todos" className="filter-todo">
-          <option value="all">All</option>
-          <option value="completed">Completed</option>
-          <option value="uncompleted">Uncompleted</option>
+          <option value="all">Todas</option>
+          <option value="completed">Concluidas</option>
+          <option value="uncompleted">Pendentes</option>
         </select>
       </div>
     </form>
