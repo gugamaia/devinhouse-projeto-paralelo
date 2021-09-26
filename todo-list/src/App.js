@@ -13,9 +13,15 @@ function App() {
   const [status, setStatus] = useState ("all");
   const [filteredTodos, setFilteredTodos] = useState ([]);
 
+
+  //rodando somente uma vez qndo app iniciar
+    useEffect(() => {
+      getLocalTodos();
+    }, []);
     //useEffect
     useEffect(() => {
       filterHandler();
+      saveLocalTodos();
     }, [todos, status]);
 
   //Funções
@@ -31,7 +37,20 @@ function App() {
           setFilteredTodos(todos);
           break;
     }
+  };
+
+  const saveLocalTodos = () => {
+   localStorage.setItem("todos", JSON.stringify(todos));
+  
+  };
+
+  const getLocalTodos = () => {
+    if(localStorage.getItem("todos") === null) {
+      localStorage.setItem("todos", JSON.stringify([]));
+    } else { let todoLocal = JSON.parse(localStorage.getItem("todos"));
+    setTodos(todoLocal);
   }
+  };
 
   return (
     <div className="App">
@@ -45,7 +64,11 @@ function App() {
     setInputText={setInputText}
     setStatus={setStatus} 
     />
-    <TodoList setTodos={setTodos} todos={todos}/>
+    <TodoList 
+    filteredTodos={filteredTodos} 
+    setTodos={setTodos} 
+    todos={todos}
+    />
     </div>
   );
 }
