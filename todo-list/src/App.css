@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300);
+
 * {
     margin: 0;
     padding: 0;
@@ -32,7 +34,11 @@
     background: #f7fffe;
     cursor: pointer;
     transition: all 0.3s ease;
-  }
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
   form button:hover {
     background: #E83338;
     color: white;
@@ -57,7 +63,10 @@
     justify-content: space-between;
     align-items: center;
     transition: all 1s ease;
+    border-radius: 10px;
   }
+
+
   .filter-todo {
     padding: 1rem;
   }
